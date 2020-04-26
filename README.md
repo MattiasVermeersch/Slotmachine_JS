@@ -13,7 +13,7 @@ De knop Replay zorgt ervoor dat alles gereset wordt en dat de gebruiker opnieuw 
 -	Maak gebruik van arrays.
 -	Verdeel je code zo veel mogelijk in logische functies
 -	Maak een lijst van de functionele vereisten en zet die vervolgens om naar technische vereisten.
-- Werk vervolgnes het programma af volgens de lijst die je opmaakte en zorg voor een betekenisvolle commit telkens je een stuk functionaliteit hebt afgewerkt.
+- Werk vervolgens het programma af volgens de lijst die je opmaakte en zorg voor een betekenisvolle commit telkens je een stuk functionaliteit hebt afgewerkt.
 - Het flippen van het fruit levert extra punten op. Zoek daarbij online naar een manier om functies vertraagd uit te voeren(om de zoveel milliseconden)
 -	Gebruik de mappenstructuur die tijdens de lessen gebruikt wordt
 
