@@ -12,8 +12,9 @@ De knop Replay zorgt ervoor dat alles gereset wordt en dat de gebruiker opnieuw 
 ### Aandachtspunten:
 -	Maak gebruik van arrays.
 -	Verdeel je code zo veel mogelijk in logische functies
--	Focus op het bepalen van de random getallen voor de fruitsoorten, en de algemene werking van het programma. Het flippen van het fruit levert extra punten op. Zoek daarbij online naar een manier om functies vertraagd uit te voeren(om de zoveel milliseconden)
--	Een aantal screenshots vind je op de volgende pagina
+-	Maak een lijst van de functionele vereisten en zet die vervolgens om naar technische vereisten.
+- Werk vervolgnes het programma af volgens de lijst die je opmaakte en zorg voor een betekenisvolle commit telkens je een stuk functionaliteit hebt afgewerkt.
+- Het flippen van het fruit levert extra punten op. Zoek daarbij online naar een manier om functies vertraagd uit te voeren(om de zoveel milliseconden)
 -	Gebruik de mappenstructuur die tijdens de lessen gebruikt wordt
 
 ### Voorbeeldfilmpje werking: 
