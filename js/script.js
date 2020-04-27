@@ -11,7 +11,7 @@ function Initialize()
    
 }
 
-/**FUNCTIONS here or in seperate functions file */
+/**FUNCTIONS here or in separate functions file */
 
 
 
