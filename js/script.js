@@ -4,7 +4,7 @@
 var btnRoll, btnStopRoll, btnReset;
 var images, imgSources;
 var spanScorePerSpel, spanScoreHistoriek, spanAantalRolls;
-var number;
+var randomNumber, intervalID;
 
 
 
@@ -32,24 +32,35 @@ function BindHtml() {
 }
 
 function AddEvents() {
-   btnRoll.addEventListener('click', StartSlotMachine);
-   btnStopRoll.addEventListener('click', StopSlotMachine);
+   btnRoll.addEventListener('click', StartOrStop);
+   btnStopRoll.addEventListener('click', StartOrStop);
    btnReset.addEventListener('click', ResetSlotMachine);
 }
 
-function StartSlotMachine() {
-   imgSources = ['kers.jpg', 'druif.jpg', 'appelsien.jpg'];
-
-   for(let i=0; i < imgSources.length; i++){
-      number = Math.floor(Math.random()*3);
-      images[i].src = 'img/'+imgSources[number];
+function StartOrStop() {
+   if(this.id == 'btnRoll') {
+      intervalID = setInterval(SlotMachine, 100);
    }
 
-   var randomImage = setInterval(StartSlotMachine, 25);
+   if(this.id == 'btnStopRoll'){
+      clearInterval(intervalID);
+   }
 }
 
-function StopSlotMachine() {
-   clearInterval(randomImage);
+function SlotMachine() {
+   imgSources = ['kers.jpg', 'druif.jpg', 'appelsien.jpg'];
+
+   for(let i = 0; i < imgSources.length; i++){
+      GenerateRandomNumber();
+      images[i].src = 'img/'+imgSources[randomNumber];
+   }
+}
+
+/**
+ * Generates random number between 0 and 2
+ */
+function GenerateRandomNumber() {
+   randomNumber = Math.floor(Math.random()*3);
 }
 
 function ResetSlotMachine() {
