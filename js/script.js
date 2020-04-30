@@ -6,6 +6,7 @@ var images, imgSources;
 var spanScorePerSpel, spanScoreHistoriek, spanAantalRolls;
 var randomNumber, intervalID;
 var scoreHistory;
+var numberOfRolls;
 
 
 
@@ -19,6 +20,7 @@ function Initialize()
    AddEvents();
    //global functions
    BuildLocalVars();
+   ResetSlotMachine();
 }
 
 /**FUNCTIONS here or in separate functions file */
@@ -40,6 +42,8 @@ function AddEvents() {
 
 function BuildLocalVars() {
    scoreHistory = new Array();
+   numberOfRolls = 3;
+   imgSources = ['kers', 'druif', 'appelsien'];
 }
 
 function StartOrStop() {
@@ -55,8 +59,6 @@ function StartOrStop() {
 }
 
 function SlotMachine() {
-   imgSources = ['kers', 'druif', 'appelsien'];
-
    for(let i = 0; i < imgSources.length; i++){
       GenerateRandomNumber();
       images[i].src = 'img/'+imgSources[randomNumber]+'.jpg';
@@ -117,5 +119,16 @@ function GettingScoreHistory() {
 }
 
 function ResetSlotMachine() {
-
+   //reset the images to starting images
+   for(let i = 0; i < imgSources.length; i++){
+      images[i].src = 'img/'+imgSources[i]+'.jpg';
+   }
+   //reset the score
+   spanScorePerSpel.innerHTML = "";
+   //reset the score history 
+   scoreHistory = [];
+   spanScoreHistoriek.innerHTML = "";
+   //reset number of rolls to default 3
+   spanAantalRolls.innerHTML = 3;
+   numberOfRolls = 3;
 }
