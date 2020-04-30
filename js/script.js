@@ -67,7 +67,7 @@ function GenerateRandomNumber() {
 
 function CalculateScore() {
    let fruitsArray = [];
-   let score;
+   let score = 0;
 
    for(let i = 0; i < images.length; i++) {
       fruitsArray.push(images[i].alt);
@@ -77,17 +77,19 @@ function CalculateScore() {
       let SearchDuplicates = p => p == element;
       let scoreArray = fruitsArray.filter(SearchDuplicates);
       
-      if(scoreArray.length == 1){
+      if(scoreArray.length == 1 && score == 0)
+      {
          score = 0;
       }
-      else if(scoreArray.length == 2) {
+      else if(scoreArray.length == 2) 
+      {
          score = 200;
       }
-
-      else if(scoreArray.length == 3) {
+      else if(scoreArray.length == 3) 
+      {
          score = 300;
       }
-      
+      spanScorePerSpel.innerHTML = score;
    });
 }
 
