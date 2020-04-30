@@ -5,6 +5,7 @@ var btnRoll, btnStopRoll, btnReset;
 var images, imgSources;
 var spanScorePerSpel, spanScoreHistoriek, spanAantalRolls;
 var randomNumber, intervalID;
+var scoreHistory;
 
 
 
@@ -16,8 +17,8 @@ function Initialize()
    BindHtml();
    //add eventlisteners
    AddEvents();
-
-
+   //global functions
+   BuildLocalVars();
 }
 
 /**FUNCTIONS here or in separate functions file */
@@ -37,6 +38,10 @@ function AddEvents() {
    btnReset.addEventListener('click', ResetSlotMachine);
 }
 
+function BuildLocalVars() {
+   scoreHistory = new Array();
+}
+
 function StartOrStop() {
    if(this.id == 'btnRoll') {
       intervalID = setInterval(SlotMachine, 25);
@@ -45,6 +50,7 @@ function StartOrStop() {
    if(this.id == 'btnStopRoll'){
       clearInterval(intervalID);
       CalculateScore();
+      GettingScoreHistory();
    }
 }
 
@@ -91,9 +97,24 @@ function CalculateScore() {
       }
       spanScorePerSpel.innerHTML = score;
    });
+   scoreHistory.push(score);
 }
 
-
+function GettingScoreHistory() {
+   let lastIndex = scoreHistory.length - 1;
+   let historyText = "";
+   for(let i = 0; i < scoreHistory.length; i++) {
+      if(i == lastIndex)
+      {
+         historyText += scoreHistory[i];
+      }
+      else 
+      {
+         historyText += scoreHistory[i] + ' - ';
+      }
+   }
+   spanScoreHistoriek.innerHTML = historyText;
+}
 
 function ResetSlotMachine() {
 
