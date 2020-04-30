@@ -39,20 +39,22 @@ function AddEvents() {
 
 function StartOrStop() {
    if(this.id == 'btnRoll') {
-      intervalID = setInterval(SlotMachine, 100);
+      intervalID = setInterval(SlotMachine, 25);
    }
 
    if(this.id == 'btnStopRoll'){
       clearInterval(intervalID);
+      CalculateScore();
    }
 }
 
 function SlotMachine() {
-   imgSources = ['kers.jpg', 'druif.jpg', 'appelsien.jpg'];
+   imgSources = ['kers', 'druif', 'appelsien'];
 
    for(let i = 0; i < imgSources.length; i++){
       GenerateRandomNumber();
-      images[i].src = 'img/'+imgSources[randomNumber];
+      images[i].src = 'img/'+imgSources[randomNumber]+'.jpg';
+      images[i].alt = imgSources[randomNumber];
    }
 }
 
@@ -62,6 +64,34 @@ function SlotMachine() {
 function GenerateRandomNumber() {
    randomNumber = Math.floor(Math.random()*3);
 }
+
+function CalculateScore() {
+   let fruitsArray = [];
+   let score;
+
+   for(let i = 0; i < images.length; i++) {
+      fruitsArray.push(images[i].alt);
+   }
+
+   fruitsArray.forEach(element => {
+      let SearchDuplicates = p => p == element;
+      let scoreArray = fruitsArray.filter(SearchDuplicates);
+      
+      if(scoreArray.length == 1){
+         score = 0;
+      }
+      else if(scoreArray.length == 2) {
+         score = 200;
+      }
+
+      else if(scoreArray.length == 3) {
+         score = 300;
+      }
+      
+   });
+}
+
+
 
 function ResetSlotMachine() {
 
