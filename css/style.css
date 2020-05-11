@@ -8,22 +8,46 @@
   --pink: #EC008C;
   --lightpink: #F9B2DC;
   --yellow: #FFED00;
-  --lighyellow: #fffded;
+  --lightyellow: #fffded;
   --green: #009A93;
   --lightgreen: #EAF5F5;
   --black: #000000;
 }
 
+html::after{
+  content: "";
+  background: url("../img2/casino.jpg");
+  background-size: cover;
+  /* opacity: 0.5; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;  
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--white);
   color: var(--black);
-  width: 80%;
+  width: 60%;
   margin-left: auto;
+  margin-right: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--blue);
+  color: red;
+  font-weight: 900;
+  font-size: 50px;
+  animation: changecolour 5s infinite;
+}
+
+@keyframes changecolour {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  75%  {color: green;}
+  100% {color: red;}
 }
 
 /* Buttons */
@@ -37,7 +61,7 @@ button {
 
 .btn-yellow {
   border-color: var(--yellow);
-  background-color: var(--lighyellow);
+  background-color: var(--lightyellow);
   color: var(--black);
 }
 
@@ -84,6 +108,7 @@ select {
   background-color: var(--blue);
   padding: 10px;
 }
+
 .grid-item {
   background-color: var(--pink);
   border: 1px solid var(--pink);
@@ -94,5 +119,48 @@ select {
 
 .color-black
 {
-    background-color: var(--black);
+  background-color: var(--black);
 }
+
+.div-container {
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 25px;
+  padding: 10px;
+  overflow: hidden;
+  background: rgba(240,255,240, 0.7);
+}
+
+
+.div-screen {
+  /*border: inset black 1px;*/
+  border-radius: 5px;
+  width: 98%;
+  border-style: inset;
+  padding: 5px;
+  background-color: #F0F8FF;
+  table-layout: fixed;
+}
+
+.div-inline {
+  display: inline-block;
+  border-style: outset;
+}
+
+.div-score {
+  width: 28%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 5px;;
+  border-style: inset;
+  background-color:rgb(255,250,240);
+  font-weight: 800;
+}
+
+.div-buttons {
+  text-align: center;
+  padding: 10px;
+}
+

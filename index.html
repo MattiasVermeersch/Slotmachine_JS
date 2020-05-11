@@ -9,23 +9,35 @@
     
 </head>
 <body>
-
     
-    <img src="img/kers.jpg" alt="kers" id="0"></img>
-    <img src="img/druif.jpg" alt ="druif" id="1"></img>
-    <img src="img/appelsien.jpg" alt="appelsien" id="2"></img>
+<div class="div-container">
+    <center><h1>Spin to win!!!</h1></center>
     
-    
-    <div>
+    <div class="div-screen">
+        <div class="div-inline">
+            <img src="img/kers.jpg" alt="kers" id="0"></img>
+        </div>
+        <div class="div-inline">
+            <img src="img/druif.jpg" alt ="druif" id="1"></img>
+        </div>
+        <div class="div-inline">
+            <img src="img/appelsien.jpg" alt="appelsien" id="2"></img>
+        </div>
+    </div>
+    <br>
+    <div class="div-score">
+        <p id="scoreWorpDiv">Score: <span id="scorePerSpel"></span></p>
+        <p id="scorePerSpelDiv">Score historiek: <span id="scoreHistoriek"></span></p>
+        <p id="aantalWorpenDiv">Aantal rolls: <span id="aantalRolls"></span></p>
+    </div>
+    <div class="div-buttons">
         <button class="btn-yellow" id="btnRoll">Roll</button>
         <button class="btn-pink" id="btnStopRoll">Stop</button>
         <button class="btn-yellow" id="btnReset">Replay</button>
     </div>
-    
-    <p id="scoreWorpDiv">Score: <span id="scorePerSpel"></span></p>
-    <p id="scorePerSpelDiv">Score historiek: <span id="scoreHistoriek"></span></p>
-    <p id="aantalWorpenDiv">Aantal rolls: <span id="aantalRolls"></span></p>
+</div>
     
 <script src="js/script.js"></script>    
+<script src="js/functions.js"></script>
 </body>
 </html>
