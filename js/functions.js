@@ -25,7 +25,7 @@ function AddEvents() {
 }
 
 /**
- * declares variables we need globally
+ * build global variables
  */ 
 function BuildLocalVars() {
     scoreHistory = new Array();
