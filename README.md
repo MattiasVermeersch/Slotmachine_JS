@@ -1,6 +1,3 @@
-# PE02-Jackpot-Opgave
-### PE Slot Machine
-
 Maak een applicatie die de werking van een slotmachine simuleert. De nodige files vind je in de dropbox.
 Wanneer een gebruiker op Roll klikt moeten de fruitsoorten beginnen flippen.
 Klikt de gebruiker op stop, dan wordt de score als volgt berekend:
